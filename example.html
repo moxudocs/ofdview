@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>USDOC文档在线预览 OFD SDK 接入示例</title>
+	<style>
+		body {
+			margin: 0
+		}
+		.test-tools {
+			height: 64px;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			padding: 0 24px;
+			background: white;
+			border-bottom: 1px solid #e6e9ec
+		}
+
+		#viewer {
+			height: calc(100dvh - 64px)
+		}
+	</style>
+	<div class="test-tools">
+		<input id="file" type="file" accept=".ofd" aria-label="选择 OFD 文档">
+	</div>
+	<div id="viewer"></div>
+	<script type="module">
+		import {createViewer
+		} from './usdoc.ofd.viewer.js';
+		const params = new URL(location.href).searchParams;
+		window.viewer = createViewer(document.getElementById('viewer'), {
+			showThumbnails: params.get('showThumbnails') !== 'false'
+		});
+		document.getElementById('file').addEventListener('change', event => {
+			const file = event.target.files?.[0];
+			if (file) void window.viewer.open(file);
+			event.target.value = '';
+		});
+		window.addEventListener('pagehide', () => window.viewer.destroy(), {
+			once: true
+		});
+		if (params.has('src')) await window.viewer.openUrl(params.get('src')?.trim() || 'about:blank');
+	</script>
+</html>
