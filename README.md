@@ -8,7 +8,6 @@ https://moxudocs.github.io/ofdview
 USDOC 文档在线预览，原生解析国产版式文档标准 OFD，无需先转 PDF。支持签章显示与验签、公文字式还原、电子发票与电子证照预览、按页加载与全文搜索；适配银河麒麟、统信 UOS 等国产系统与鲲鹏、飞腾等国产 CPU，支持内网私有化部署。更多Office系列文档预览、PPT动画预览、PPT触发器、极速大文件分片解析预览、PPT音视频参考在线体验：https://www.doczs.cn/example.html
 
 
-
 # USDOC OFD文档在线预览 SDK 使用手册
 
 适用版本：3.12.03  
@@ -61,7 +60,11 @@ SDK 目录包含：
 部署 SDK 目录后，访问以下地址，路径按实际站点替换：
 
 ```text
-https://your-domain.example/ofd-sdk/example.html
+
+https://moxudocs.github.io/ofdview/?src=http://192.168.1.10/file/ofd/test.ofd
+
+//注意文件地址http://192.168.1.10/file/ofd/test.ofd要允许跨域
+http://192.168.1.10/file/ofd/test.ofd
 ```
 
 点击“选择 OFD 文档”，选择本地文件，即可验证正文、缩略图、搜索与缩放。该选择按钮位于示例页面外层，不属于阅读器内部。
