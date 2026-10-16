@@ -245,5 +245,6 @@ HTTPS 业务页面应使用 HTTPS 下载地址。Windows 磁盘路径不能作�
 当前支持 OFD 文字、路径、图片、常用颜色与渐变等内容，以及基础批注和可提取的 PNG/JPEG 签章外观。签章外观显示不等于数字签名验证；加密文档、特殊图片编码及复杂 OFD 特性应使用实际样本验证。
 
 更多文档在线预览产品 [https://www.doczs.cn/example.html](Office文档在线预览大全、PPT动画触发器在线播放)。
+[https://usdoc.cn/](PPT动画触发器在线播放)。
 
 
